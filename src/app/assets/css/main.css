@@ -1,0 +1,67 @@
+html, body {
+    height: 100%; /*外層高度100%*/
+    margin: 0;
+}
+.wrapper {
+    min-height: 100%; /*外層高度100%*/
+    margin-bottom: -50px; /*隨footer高度需做調整*/
+}
+#root{
+    padding-bottom: 50px; /*避免文字超出瀏覽器時，內容區塊不會和footer打架*/
+}
+.site-layout-content {
+    min-height: 280px;
+    padding: 24px;
+    background: #fff;
+}
+#components-layout-demo-top .logo {
+    float: left;
+    width: 120px;
+    height: 31px;   
+    margin: 16px 24px 16px 0;
+    background: rgba(255, 255, 255, 0.3);
+}
+.ant-row-rtl #components-layout-demo-top .logo {
+    float: right;
+    margin: 16px 0 16px 24px;
+}
+.wrapper{
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+.header{ 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 15vh; 
+    background-image: url("../images/united_background.png");
+    background-size: cover;
+}
+.header .logo {
+    width: 15vw;
+    height: 100%;
+    text-align: left;
+}
+.header .logo a img{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+}
+.header .menu {
+    /* text-align: right; */
+    position:absolute;
+    right:0px;
+}
+.header .menu ul li {
+    width: 150px;
+    display: inline-block;
+    font-size:18px;
+}
+.footer{ 
+    height: 50px; /*設定footer本身高度*/
+    /* background-color: red; */
+}
+.banner{
+    height: 500px;
+}
