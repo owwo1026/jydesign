@@ -1,31 +1,62 @@
 import React, { useState, useEffect, useCallback } from 'react'
-import { Form, Input, InputNumber, Button, Row, Col } from 'antd';
+import { Form, Input, InputNumber, Button, Row, Col, Radio } from 'antd';
 import _ from 'lodash'
 import axios from 'axios';
 import united_design_logo from "../../assets/images/S__213770243.jpg"
 
 const layout = {
     labelCol: { span: 4 },
-    wrapperCol: { span: 8 },
+    wrapperCol: { span: 15 },
+    colon: false,
+    labelAlign: 'left',
+    scrollToFirstError: true,
+    layout:'vertical',
 };
 
 /* eslint-disable no-template-curly-in-string */
 const validateMessages = {
-    required: '${label} is required!',
+    required: '${label} 必填',
     types: {
-        email: '${label} is not a valid email!',
-        number: '${label} is not a valid number!',
-    },
-    number: {
-        range: '${label} must be between ${min} and ${max}',
-    },
+        email: '${label} 格式有誤'
+    }
 };
 /* eslint-enable no-template-curly-in-string */
 
 const contact = props => { 
-    const postNotify = (data) => {
+    const postNotify = (data) => { 
+        // 組裝要傳送的訊息 
+        var msg = '\n==== [新留言] ====';
+        Object.keys(data).forEach(key => {
+            let val = data[key] || '';
+            switch (key) {
+                case 'name':
+                    msg = msg + '\n名稱: ' + data[key] || '';
+                    break;
+                case 'phone':
+                    msg = msg + '\n電話: ' + data[key] || '';
+                    break;
+                case 'email':
+                    msg = msg + '\n電子信箱: ' + data[key] || '';
+                    break;
+                case 'address':
+                    msg = msg + '\n聯絡地址: ' + data[key] || '';
+                    break;
+                case 'housingStatus':
+                    msg = msg + '\n房屋狀態: ' + data[key] || '';
+                    break;
+                case 'budgetRange':
+                    msg = msg + '\n預算: ' + data[key] || '' + ' 萬元';
+                    break;
+                case 'desc':
+                    msg = msg + '\n需求說明: ' + data[key] || '';
+                    break;
+                default:
+                    break;
+            }
+        })
+        var msg = msg + '\n==== [END] ====';
         data= { 
-            message: JSON.stringify(data)+'\n1231231231',
+            message: msg,
             stickerPackageId: '446',
             stickerId: '1988'
         };
@@ -55,9 +86,10 @@ const contact = props => {
         })
     }
     const onFinish = (values) => {
-        console.log(values.user);
+        console.log(values);
         postNotify(values.user);
     };
+    const googleMap = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16484.188269497543!2d121.53934271146282!3d25.067470979094104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abfa9e319e81%3A0x95ad11bb0a908643!2zMTA15Y-w54Gj5Y-w5YyX5biC5p2-5bGx5Y2A5rCR5peP5p2x6LevNjg56Jmf!5e0!3m2!1szh-TW!2sjp!4v1648604969813!5m2!1szh-TW!2sjp" width="80%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
     return (
         <div class='contact'>
             <div class='title'>
@@ -66,18 +98,19 @@ const contact = props => {
             <Row>
                 <Col span={12}>
                     <div class='myMiniInfo'>
-                        <img style={{width: '70%'}} src={united_design_logo} alt="凝聚室內設計"/>
+                        {/* <img style={{width: '70%'}} src={united_design_logo} alt="凝聚室內設計"/> */}
+                        <div dangerouslySetInnerHTML={{ __html: googleMap}}></div>    
                     </div>
                 </Col>
                 <Col span={12}>
                     <div class='contactForm' >
                         <Form {...layout} name='nest-messages' onFinish={onFinish} 
-                            // validateMessages={validateMessages}
+                            validateMessages={validateMessages}
                         >
                             <Form.Item
                                 name={['user', 'name']} label='姓名'
                                 rules={[
-                                    { required: false },
+                                    { required: true },
                                 ]}
                             >
                                 <Input />
@@ -85,7 +118,9 @@ const contact = props => {
                             <Form.Item
                                 name={['user', 'phone']} label='電話'
                                 rules={[
-                                    // { type: 'email' },
+                                    {   
+                                        required: true
+                                    }
                                 ]}
                             >
                                 <Input />
@@ -93,30 +128,29 @@ const contact = props => {
                             <Form.Item
                                 name={['user', 'email']} label='電子信箱'
                                 rules={[
-                                    // { type: 'email' },
+                                    {   
+                                        type: 'email' 
+                                    }
                                 ]}
                             >
                                 <Input />
                             </Form.Item>
-                            <Form.Item
-                                name={['user', 'address']} label='聯絡地址'
-                                rules={[
-                                    // { type: 'email' },
-                                ]}
-                            >
+                            <Form.Item name={['user', 'address']} label='聯絡地址'>
                                 <Input />
                             </Form.Item>
-                            <Form.Item name={['user', 'housingStatus']} label='房屋現況'>
-                                <Input />
-                            </Form.Item>
-                            <Form.Item name={['user', 'sqft']} label='坪數'>
-                                <Input />
+                            <Form.Item name={['user', 'housingStatus']} label='房屋狀態'>
+                            <Radio.Group>
+                                <Radio value="中古屋">中古屋</Radio>
+                                <Radio value="預售屋">預售屋</Radio>
+                                <Radio value="新成屋">新成屋</Radio>
+                            </Radio.Group>
                             </Form.Item>
                             <Form.Item name={['user', 'budgetRange']} label='預算範圍'>
-                                <Input />
+                                <InputNumber min={0} max={10000} defaultValue={0} />
+                                <span style={{paddingLeft: '10px'}}>萬元</span>
                             </Form.Item>
                             <Form.Item name={['user', 'desc']} label='需求說明'>
-                                <Input.TextArea />
+                                <Input.TextArea placeholder="請輸入您的需求" autoSize={{ minRows: 3, maxRows: 5 }}/>
                             </Form.Item>
                             <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
                                 <Button type='primary' htmlType='submit'>

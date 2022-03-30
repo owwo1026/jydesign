@@ -6,7 +6,6 @@ import united_design_headerImg from "../../assets/images/img/test01.jpeg"
 export default () => (
         <header id='header' class='header'>
             {/* <Affix offsetTop={1}> */}
-                {/* style = {{backgroundColor: 'tomato'}} */}
                 <div class="logo">
                     <a role="button" href="/">
                         <img style={{width: '70%'}} src={united_design_logo} alt="凝聚室內設計"/>
