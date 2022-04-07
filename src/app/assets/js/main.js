@@ -2,15 +2,36 @@ import $ from 'jquery'
 
 //----------- [START] global JS function
 $(document).ready(function () {
-    $(window).scroll(function() {
-        // console.log("$(this).scrollTop() " + $(this).scrollTop());
-        // console.log("$(this).height() " + $(this).height());
-        // console.log("$(window).height() " + $(window).height());
-        // if ($(this).scrollTop()<=0){
-        //     console.log("滾動條已經到達頂部爲0");
-        // }
-        // if ($(this).scrollTop() >= $(this).height() - $(window).height()) {
-        //     console.log("滾動條已經到達底部爲" + $(this).scrollTop());
-        // }
+    /* ---------------------------------------------- /*
+    * Header Sticky
+    /* ---------------------------------------------- */
+    $(window).scroll(function(){
+        if ($(window).scrollTop() >= 100) {
+            $('.header-sticky').addClass('header-fixed-top animate__animated animate__fadeInDown');
+            $('.header-sticky').removeClass('not-sticky');
+        }
+        else {
+            $('.header-sticky').removeClass('header-fixed-top');
+            $('.header-sticky').addClass('not-sticky');
+        }
     });
+
+    /* ---------------------------------------------- /*
+    * Scroll top
+    /* ---------------------------------------------- */
+
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 100) {
+            $('.page-scroll-up').fadeInUp();
+        } else {
+            $('.page-scroll-up').fadeOut();
+        }
+    });
+
+    $('a[href="#totop"]').click(function() {
+        $('html, body').animate({ scrollTop: 0 }, 'slow');
+        return false;
+    });
+
+
 })

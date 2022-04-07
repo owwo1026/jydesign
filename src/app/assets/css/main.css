@@ -11,7 +11,7 @@ html, body {
     font-weight: bold;
     text-align: center;
     overflow: auto;
-    background: #f0f2f5;
+    background: #18191b;
     display: flex;  
     flex-flow: row wrap;
 }
@@ -42,6 +42,7 @@ html, body {
 .header{ 
     display: flex;  
     flex-flow: column wrap;
+    font-family: 'Dosis', sans-serif;
     /* height: 80px;  */
     /* background-color:rgba(66,66,66,.3); */
 }
@@ -50,14 +51,19 @@ html, body {
     flex-flow: row wrap;
     align-items: left;
     justify-content: right;
-    margin-top: 10px;
+    height: 80px;
+    /* background-color: #18191b; */
+}
+.header-fixed-top{
+    background-color: #18191b;
+    margin-top: 0;
 }
 .header .headerTop .logo {
     flex: 1 1 15%;
     height: 0;
 }
 .header .headerTop .logo img {
-    width: 70%;
+    width: 85%;
     position: relative;
     bottom: 15px;
 }
@@ -70,7 +76,7 @@ html, body {
     flex-flow: row nowrap;
     justify-content: right;
     align-items: end;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 .header .headerTop .menu ul li{
     list-style-type: none;
@@ -80,11 +86,11 @@ html, body {
     padding-bottom: 20px;
 }
 a{
-    color: black;
+    color: white;
 }
 .header .headerTop .menu ul li a:hover{
     background:rgba(0, 0, 0, 0.397);
-    color: white;
+    color: #FAB702;
     border-radius: 5px;
 }
 .header .headerBottom {

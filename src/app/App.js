@@ -5,15 +5,14 @@ import './assets/css/main.css';
 import Routes from './Routes';
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
-import { Layout } from 'antd';
 
 // const { Header, Content, Footer } = Layout;
 export default function App() {
   return (
-    <Layout>
+    <div>
       <Header/>
       <Routes/>
       <Footer/>
-    </Layout>
+    </div>
   );
 }
