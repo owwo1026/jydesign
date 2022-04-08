@@ -6,9 +6,14 @@ $(document).ready(function () {
     * Header Sticky
     /* ---------------------------------------------- */
     $(window).scroll(function(){
+        console.log($(window).scrollTop());
         if ($(window).scrollTop() >= 100) {
-            $('.header-sticky').addClass('header-fixed-top animate__animated animate__fadeInDown');
-            $('.header-sticky').removeClass('not-sticky');
+            // $('.headerTop').fadeOut();
+            $('.header-sticky').removeClass('not-sticky animate__fadeInDown');
+        }
+        if ($(window).scrollTop() >= 105) {
+            // $('.header-sticky').removeClass('not-sticky animate__fadeInDown');
+            $('.header-sticky').addClass('header-fixed-top');
         }
         else {
             $('.header-sticky').removeClass('header-fixed-top');
@@ -22,7 +27,7 @@ $(document).ready(function () {
 
     $(window).scroll(function() {
         if ($(this).scrollTop() > 100) {
-            $('.page-scroll-up').fadeInUp();
+            $('.page-scroll-up').fadeIn();
         } else {
             $('.page-scroll-up').fadeOut();
         }

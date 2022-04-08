@@ -7,7 +7,12 @@ export default () => (
             banner
         </div>
         <div id='message'>
-            message
+            {/* timeline、events、messages */}
+            <div class="fb-page" data-href="https://m.facebook.com/unitedaarch/" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                <blockquote cite="https://m.facebook.com/unitedaarch/" class="fb-xfbml-parse-ignore">
+                    <a href="https://m.facebook.com/unitedaarch/">凝聚設計</a>
+                </blockquote>
+            </div>
         </div>
     </div>
 )

@@ -5,10 +5,17 @@ import App from './app/App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 
+import './app/assets/css/main.css';
+import Routes from './app/Routes';
+import Header from './app/components/header/header';
+import Footer from './app/components/footer/footer';
+
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <Header/>
+      <Routes/>
+      <Footer/>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

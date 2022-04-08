@@ -13,14 +13,16 @@ html, body {
     overflow: auto;
     background: #18191b;
     display: flex;  
-    flex-flow: row wrap;
+    flex-flow: column wrap;
+    flex-grow: 1;
 }
 .wrapper > * {
     flex: 1 100%;
     max-width: 100%;
 }
 #root{
-    padding-bottom: 50px; /*避免文字超出瀏覽器時，內容區塊不會和footer打架*/
+    /* padding-bottom: 50px;  */
+    /*避免文字超出瀏覽器時，內容區塊不會和footer打架*/
 }
 .site-layout-content {
     min-height: 280px;
@@ -52,11 +54,13 @@ html, body {
     align-items: left;
     justify-content: right;
     height: 80px;
-    /* background-color: #18191b; */
 }
 .header-fixed-top{
-    background-color: #18191b;
+    background-color: #18191ba3;
     margin-top: 0;
+    position: fixed;
+    top:0px;
+    animation-name: fadeInDown;
 }
 .header .headerTop .logo {
     flex: 1 1 15%;
@@ -86,7 +90,9 @@ html, body {
     padding-bottom: 20px;
 }
 a{
+    display: inline-flex;
     color: white;
+    overflow: hidden;
 }
 .header .headerTop .menu ul li a:hover{
     background:rgba(0, 0, 0, 0.397);
@@ -98,12 +104,27 @@ a{
 }
 /* Footer */
 .footer{
-    margin-top: auto;
+    background: black;
+    color: white;
+    justify-content: space-around;
+    align-items: center;
     line-height: 100px;
     height: 100px;
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
 }
-.banner{
-    height: 500px;
+.text{
+
+}
+.messageIcon{
+    position: relative;
+    left: 50px;
+    top: 15px;
+}
+.footer .messageIcon a:hover{
+    color: #FAB702;
+    transform: scale(1.2);
 }
 /* ContactUs 聯絡我們 */
 .content {
