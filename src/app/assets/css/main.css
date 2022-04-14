@@ -11,7 +11,7 @@ html, body {
     font-weight: bold;
     text-align: center;
     overflow: auto;
-    background: #18191b;
+    /* background: #262626; */
     display: flex;  
     flex-flow: column wrap;
     flex-grow: 1;
@@ -45,8 +45,7 @@ html, body {
     display: flex;  
     flex-flow: column wrap;
     font-family: 'Dosis', sans-serif;
-    /* height: 80px;  */
-    /* background-color:rgba(66,66,66,.3); */
+    background: #262626;
 }
 .header .headerTop {
     display: flex;  
@@ -56,23 +55,24 @@ html, body {
     height: 80px;
 }
 .header-fixed-top{
+    width: 100%;
     background-color: #18191ba3;
     margin-top: 0;
     position: fixed;
     top:0px;
     animation-name: fadeInDown;
+    z-index: 999;
 }
 .header .headerTop .logo {
-    flex: 1 1 15%;
-    height: 0;
+    flex: 1 1 20%;
+    display: flex;
+    max-width: 100%;
+    height: 80px;
 }
 .header .headerTop .logo img {
-    width: 85%;
-    position: relative;
-    bottom: 15px;
 }
 .header .headerTop .menu {
-    flex: 1 1 85%;
+    flex: 1 1 80%;
 }
 .header .headerTop .menu ul {
     height: 100%;
@@ -85,7 +85,6 @@ html, body {
 .header .headerTop .menu ul li{
     list-style-type: none;
     width: 150px;
-    margin: 0 5px;
     font-size: 16px;
     padding-bottom: 20px;
 }
@@ -95,35 +94,61 @@ a{
     overflow: hidden;
 }
 .header .headerTop .menu ul li a:hover{
-    background:rgba(0, 0, 0, 0.397);
-    color: #FAB702;
+    /* background:rgba(0, 0, 0, 0.397); */
+    color: #ececbb;
     border-radius: 5px;
+    transform: scale(1.2);
+}
+.header .headerTop .menu ul li a:active{
+    background:rgba(0, 0, 0, 0.397);
+    color: #ececbb;
+    border-radius: 5px;
+    transform: scale(1.2);
 }
 .header .headerBottom {
     flex: 1 100%;
+    width: 100%;
+    max-height: 80vh;
+    overflow: hidden;
+}
+.header .headerBottom img{
+    width: 100%;
 }
 /* Footer */
 .footer{
-    background: black;
+    background: #262626;
     color: white;
     justify-content: space-around;
     align-items: center;
-    line-height: 100px;
-    height: 100px;
+    /* line-height: 100px;
+    height: 100px; */
     display: flex;
-    align-items: center;
     flex-flow: row wrap;
 }
+.footer .info{
+    font-size: 14px;
+    justify-content: left;
+    text-align: left;
+    font-weight: normal;
+}
+.footer h4 {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 0.3em;
+}
+.footer p{
+    margin-bottom: 0.1em;
+}
 .text{
-
 }
 .messageIcon{
-    position: relative;
-    left: 50px;
-    top: 15px;
+}
+.messageIcon a img{
+    width: 80%;
 }
 .footer .messageIcon a:hover{
-    color: #FAB702;
+    color: #ececbb;
     transform: scale(1.2);
 }
 /* ContactUs 聯絡我們 */
@@ -143,6 +168,9 @@ a{
 .contact .myMiniInfo{
     padding: 20px;
 }
+.contact .myMiniInfoDetail{
+    justify-content: left;
+}
 /* Works 作品集 */
 #works{
     display: flex;
@@ -152,11 +180,9 @@ a{
 .imgList {
     padding: 50px;
     display: flex;
+    justify-content: center;
     align-items: center;
     flex-flow: row wrap;
-    /* border-width: 3px;
-    border-style: outset;
-    border-color: #FFAC55; */
 }
 .img {
     margin: 10px;

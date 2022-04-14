@@ -6,7 +6,7 @@ $(document).ready(function () {
     * Header Sticky
     /* ---------------------------------------------- */
     $(window).scroll(function(){
-        console.log($(window).scrollTop());
+        // console.log($(window).scrollTop());
         if ($(window).scrollTop() >= 100) {
             // $('.headerTop').fadeOut();
             $('.header-sticky').removeClass('not-sticky animate__fadeInDown');
@@ -37,6 +37,5 @@ $(document).ready(function () {
         $('html, body').animate({ scrollTop: 0 }, 'slow');
         return false;
     });
-
 
 })

@@ -14,7 +14,7 @@ function callback(key) {
 export default () => (
     <div id='faq' class='faq'>
         <div class='title'>
-            <h1>作品集</h1>    
+            <h1>常見問題</h1>    
         </div>
         <div class='question'>
             <Collapse onChange={callback}>

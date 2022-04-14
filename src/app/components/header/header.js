@@ -1,7 +1,7 @@
 import React from 'react'
-import { Affix, Row, Col  } from 'antd';
 import united_design_logo from '../../assets/images/united_design_logo_white.png'
 import united_design_headerImg from '../../assets/images/designexo-header-image.jpeg'
+// import united_design_headerImg from '../../assets/images/img/T01_3.jpeg'
 import '../../assets/js/main.js'
 import 'animate.css';
 
@@ -24,7 +24,7 @@ export default () => (
             </nav>
         </div>
         <div class = 'headerBottom'>
-            <img style={{width: '100%'}} src={united_design_headerImg} alt='凝聚室內設計'/>
+            <img src={united_design_headerImg} alt='凝聚室內設計'/>
         </div>
     </header>
 

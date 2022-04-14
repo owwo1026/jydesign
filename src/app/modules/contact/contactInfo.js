@@ -100,9 +100,8 @@ const contact = props => {
                         <div dangerouslySetInnerHTML={{ __html: googleMap}}></div>
                     </div>
                     <div class='myMiniInfoDetail'>
-                        <p>凝聚</p>
-                        <p>04-1234567</p>
-                        <p>0987-654-321</p>
+                        <p>凝聚室內裝修設計</p>
+                        <p>台北市松山區民族東路689號</p>
                     </div>
                 </Col>
                 <Col span={12}>
