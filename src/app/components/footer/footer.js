@@ -16,10 +16,10 @@ export default () => (
     </div>
     <div class='messageIcon'>
       <Space>
-        <a role='button' href='https://www.facebook.com/uniteddesign00'>
+        <a role='button' href='https://www.facebook.com/uniteddesign00' target="_blank">
           <FacebookOutlined style={{ fontSize: '30px' }}/>
         </a>
-        <a role='button' href='https://www.instagram.com/uniteddesign0/'>
+        <a role='button' href='https://www.instagram.com/uniteddesign0/' target="_blank">
           <InstagramOutlined style={{ fontSize: '30px' }}/>
         </a>
         <a role='button' href='/'>

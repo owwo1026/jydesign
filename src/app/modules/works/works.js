@@ -10,7 +10,6 @@ export default () => (
         </div>
         <div class='imgList'>
             <div class='img'> 
-                {/* href={testImg} */}
                 <a target='_blank'>
                     <img src={testImg} alt='Fjords' width='300' height='200'/>
                 </a>
@@ -41,7 +40,6 @@ export default () => (
                 <div class='desc'>Add a description of the image here</div>
             </div>
             <div class='img'> 
-                {/* href={testImg} */}
                 <a target='_blank'>
                     <img src={testImg} alt='Fjords' width='300' height='200'/>
                 </a>
