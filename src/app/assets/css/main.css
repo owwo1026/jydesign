@@ -85,7 +85,7 @@ html, body {
 .header .headerTop .menu ul li{
     list-style-type: none;
     width: 150px;
-    font-size: 16px;
+    font-size: 18px;
     padding-bottom: 20px;
 }
 a{
@@ -120,16 +120,18 @@ a{
     color: white;
     justify-content: space-around;
     align-items: center;
-    /* line-height: 100px;
-    height: 100px; */
     display: flex;
     flex-flow: row wrap;
+}
+.footer img{
+    width: 10%;
 }
 .footer .info{
     font-size: 14px;
     justify-content: left;
     text-align: left;
     font-weight: normal;
+    margin: 30px;
 }
 .footer h4 {
     color: white;
@@ -181,18 +183,71 @@ a{
     padding: 50px;
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-flow: row wrap;
 }
 .img {
     margin: 10px;
 }
-
+.worksModal {
+    width: 70vw;
+    display: none;
+    position: absolute;
+    margin-right: -50%;
+    transform: translate(0%, -40%);
+}
+.worksModal img{
+    display: inline-block;
+}
+.modalBlur > *:not(.worksModal) {
+    -webkit-filter: blur(3px);
+}
+.slick-slide{
+    padding: 20px;
+}
+.slick-prev {
+    left: 3% !important;
+    z-index: 1;
+}
+.slick-next {
+    right: 3% !important;
+    z-index: 1;
+}
+.slick-prev:before,
+.slick-next:before {
+    color: black!important;
+}
 /* FAQ 常見問題*/
 .faq{
     padding: 20px;
 }
 .faq .question{
+    display: flex;
+    flex-flow: row wrap;
     padding: 20px;
     justify-content: center;
+}
+.faq .question .questionItem{
+    width: 60%;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    border-width:5px;
+    border-style:dashed;
+    border-color:#7B7B7B;
+    padding:5px;
+    border-radius: 20px;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    box-shadow:3px 3px 5px 5px #cccccc;
+}
+.faq .question .questionItem > * {
+    margin: 20px;
+}
+.faq .question .questionItem .que{
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 0.3em
+}
+.faq .question .questionItem .ans{
+    
 }

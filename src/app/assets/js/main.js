@@ -24,18 +24,6 @@ $(document).ready(function () {
     /* ---------------------------------------------- /*
     * Scroll top
     /* ---------------------------------------------- */
-
-    $(window).scroll(function() {
-        if ($(this).scrollTop() > 100) {
-            $('.page-scroll-up').fadeIn();
-        } else {
-            $('.page-scroll-up').fadeOut();
-        }
-    });
-
-    $('a[href="#totop"]').click(function() {
-        $('html, body').animate({ scrollTop: 0 }, 'slow');
-        return false;
-    });
+    $('.title').addClass('animate__animated animate__slideInLeft');
 
 })
