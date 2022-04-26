@@ -6,12 +6,9 @@ html, body {
 .wrapper {
     min-height: 100%;
     margin-bottom: -50px;
-    /* width: 100%;
-    height: 100%; */
     font-weight: bold;
     text-align: center;
     overflow: auto;
-    /* background: #262626; */
     display: flex;  
     flex-flow: column wrap;
     flex-grow: 1;
@@ -20,9 +17,14 @@ html, body {
     flex: 1 100%;
     max-width: 100%;
 }
-#root{
-    /* padding-bottom: 50px;  */
-    /*避免文字超出瀏覽器時，內容區塊不會和footer打架*/
+.back_to_top {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    right: 2rem;
+    bottom: 2rem;
+    height: 40px;
+    transition: all 0.3s ease-in-out;
 }
 .site-layout-content {
     min-height: 280px;
@@ -50,7 +52,7 @@ html, body {
 .header .headerTop {
     display: flex;  
     flex-flow: row wrap;
-    align-items: left;
+    /* align-items: left; */
     justify-content: right;
     height: 80px;
 }
@@ -69,10 +71,12 @@ html, body {
     max-width: 100%;
     height: 80px;
 }
-.header .headerTop .logo img {
-}
 .header .headerTop .menu {
     flex: 1 1 80%;
+}
+.header .headerTop .miniMenu {
+    flex: 1 1 0%;
+    display: none;
 }
 .header .headerTop .menu ul {
     height: 100%;
@@ -94,7 +98,6 @@ a{
     overflow: hidden;
 }
 .header .headerTop .menu ul li a:hover{
-    /* background:rgba(0, 0, 0, 0.397); */
     color: #ececbb;
     border-radius: 5px;
     transform: scale(1.2);
@@ -113,6 +116,74 @@ a{
 }
 .header .headerBottom img{
     width: 100%;
+}
+/* pad */
+@media (max-width: 880px) {
+    .header .headerTop {
+        flex-flow: row nowrap;
+    }
+    .header .headerTop .menu ul li{
+        width: 100px;
+    }
+}
+/* mobile */
+@media (max-width: 580px) {
+    .header .headerTop {
+        display: flex;  
+        flex-flow: row nowrap;
+        align-items: left;
+        justify-content: right;
+        height: 10vh;
+    }
+    .header .headerTop .miniMenu {
+        flex: 1 1 80%;
+        justify-content: right;
+        align-items: center;
+        display: flex;
+        padding: 20px;
+    }
+    .header .headerTop .menu {
+        flex: 1 1 0%;
+        display: none;
+    }
+    .dropdown-content {
+        z-index: 9999;
+        display: none;
+        position: absolute;
+        top:50px;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    }
+    
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+    /* .header-fixed-top{
+        width: 100%;
+        background-color: #18191ba3;
+        margin-top: 0;
+        position: fixed;
+        top:0px;
+        animation-name: fadeInDown;
+        z-index: 999;
+    } */
+    /* .header .headerTop .logo {
+        flex: 1 1 20%;
+        display: flex;
+        max-width: 100%;
+        height: 80px;
+    } */
+    .header .headerBottom {
+        flex: 1 100%;
+        width: 100%;
+        max-height: 20vh;
+        overflow: hidden;
+    }
 }
 /* Footer */
 .footer{
@@ -247,7 +318,4 @@ a{
     font-size: 15px;
     font-weight: bold;
     margin-bottom: 0.3em
-}
-.faq .question .questionItem .ans{
-    
 }

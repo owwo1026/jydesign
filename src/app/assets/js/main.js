@@ -24,6 +24,21 @@ $(document).ready(function () {
     /* ---------------------------------------------- /*
     * Scroll top
     /* ---------------------------------------------- */
-    $('.title').addClass('animate__animated animate__slideInLeft');
+
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 400) {
+            $('.back_to_top').fadeIn();
+        } else {
+            $('.back_to_top').fadeOut();
+        }
+    });
+    $(".back_to_top").click(function () {
+        $("html, body").animate({scrollTop: 0}, 1000);
+    });
+
+    /* ---------------------------------------------- /*
+    * All Page Title Animate
+    /* ---------------------------------------------- */
+    // $('.title').addClass('animate__animated animate__slideInLeft');
 
 })
