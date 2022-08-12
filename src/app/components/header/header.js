@@ -2,8 +2,8 @@ import React from "react";
 import {
   MenuOutlined
 } from "@ant-design/icons";
-import united_design_logo from "../../assets/images/logo/united_design_logo_white.png";
-import united_design_headerImg from "../../assets/images/logo/designexo-header-image.jpeg";
+import united_design_logo from "../../assets/images/logo/LOGO_中英_橫式1.png";
+import united_design_headerImg from "../../assets/images/img/T01_3.jpeg";
 import "../../assets/js/main.js";
 import "animate.css";
 import { Menu, Dropdown, Button, message, Space, Tooltip } from 'antd';
@@ -18,7 +18,7 @@ export default () => {
   }
   function menuClick(e) {
     e.stopPropagation();
-}
+  }
   $(document).click(function() {
       $('#myDropdown').hide();
   });
@@ -27,7 +27,7 @@ export default () => {
       <div className="headerTop header-sticky not-sticky animate__animated animate__fadeInDown">
         <div className="logo">
           <a role="button" href="/">
-            <img src={united_design_logo} alt="凝聚室內設計" />
+            <img id="headerLogo" src={united_design_logo} alt="維域設計室內裝修有限公司" />
           </a>
         </div>
         <div className='miniMenu'>
@@ -67,9 +67,9 @@ export default () => {
           </ul>
         </nav>
       </div>
-      <div className="headerBottom">
-        <img src={united_design_headerImg} alt="凝聚室內設計" />
-      </div>
+      {/* <div className="headerBottom">
+        <img src={united_design_headerImg} alt="維域設計室內裝修有限公司" />
+      </div> */}
     </header>
   )
 };

@@ -1,18 +1,16 @@
-import React, { useState, useRef } from 'react'
-// import { Layout, Menu, Breadcrumb } from 'antd';
+import React, { useRef } from 'react'
+import { Tabs } from 'antd';
 import _ from 'lodash'
 import $ from 'jquery'
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import '../../assets/css/works.css';
 import worksList from '../../assets/json/worksList.json';
 
-// const requireContext = require.context('../../assets/images/works/1',true, /^\.\/.*\.jpg$/);
-// const projectImgs = requireContext.keys().map(requireContext);
-// console.log('projectImgs = ' + projectImgs);
+const { TabPane } = Tabs;
 
 export default () => {
-    // const [slideIndex, setSlideIndex] = useState(0);
     const customSlider = useRef();
     const settings = {
         adaptiveHeight: true,
@@ -23,26 +21,6 @@ export default () => {
         slidesToShow: 1,
         slidesToScroll: 1
     };
-    // $(window).scroll(function(){
-    //     var width = $('.worksModal').outerWidth(),
-    //         height = $('.worksModal').outerHeight(),
-            
-    //         $window = $(window),
-    //         bodyWidth = $window.width(),
-    //         bodyHeight = $window.height(),
-            
-    //         scrollTop = $window.scrollTop(),
-    //         top = (bodyHeight / 2 - height / 2) / 3 * 2 + scrollTop,
-    //         left = bodyWidth / 2 - width / 2;
-    //         console.log('top = ' + (bodyHeight / 2 - height / 2) / 3 * 2 + scrollTop);
-        
-    //     $('.worksModal').css({
-    //         top: top,
-    //         left: left,
-    //         transform: `translate(${top}, ${left})`
-    //     });
-    // });
-    
     function imageClick(e, id) {
         var width = $('.worksModal').outerWidth(),
             height = $('.worksModal').outerHeight(),
@@ -69,7 +47,7 @@ export default () => {
             $('.header').removeClass('modalBlur');
             $('.footer').removeClass('modalBlur');
         } else {
-            $('.works').addClass('modalBlur');
+            $('.works:not("#worksModal")').addClass('modalBlur');
             $('.header').addClass('modalBlur');
             $('.footer').addClass('modalBlur');
         }
@@ -84,48 +62,75 @@ export default () => {
         $('.footer').removeClass('modalBlur');
         $('.worksModal').hide();
     });
-
     // 處理img
     var imgList = [];
+    var imgItem = [];
+    var slideList = [];
     var count = 0;
-    _.map(worksList, (item) => (
-        _.map(item.images, img => {
-            imgList.push({
+    _.forEach(worksList, item => {
+        imgItem = [];
+        slideList = [];
+        count = 0;
+        const works = require.context("../../assets/works/");
+        const worksItem = _.filter(works.keys(), p => p.includes(item.path));
+        // console.log("worksItem = " + worksItem);
+        // console.log("worksItem: "+ worksItem);
+        _.forEach(worksItem.map(works), img => {
+            imgItem.push({
                 id: count,
-                desc: img.desc,
-                url:  item.path + img.fileName
+                url:  img
+            });
+            slideList.push({
+                id: count,
+                url:  img
             });
             count++;
-        })
-    ))
+        });
+        imgList.push({
+            name: item.name,
+            desc: item.desc,
+            images: imgItem,
+            slideList: slideList
+        });
+    });
     return (
         <div className='works'>
             <div className='title'>
                 <h1>作品集</h1>    
             </div>
-            <div className='imgList'>
+            <div className="imgList">
+                <Tabs type="card" centered="true" size="large">
                 { 
-                    _.map(imgList, (item,idx1) => (
-                        <div className='img animate__animated animate__zoomIn'> 
-                            <a className='click_worksModal'>
-                                <img onClick={(e) => imageClick(e, item.id)} className='imgListItem' src={item.url} alt='Fjords' width='300' height='200' />
-                            </a>
+                    _.map(imgList, (item) => (
+                        <TabPane tab={item.name} key={item.name}>
                             <div className='desc'>{item.desc}</div>
-                        </div>
+                            <div className='imgItems'>
+                                {   
+                                    _.map(item.images, (img) => (
+                                        <div className='img animate__animated animate__zoomIn'> 
+                                            <a className='click_worksModal'>
+                                                <img onClick={(e) => imageClick(e, img.id)} className='imgListItem' src={img.url} alt={img.desc} id={img.id} width='300' height='200' />
+                                            </a>
+                                        </div>
+                                    ))
+                                }
+                            </div>
+                            <div id='worksModal' className='worksModal animate__animated animate__zoomIn' onClick={(e) => modalImageClick(e)}>
+                                <Slider 
+                                    {...settings}
+                                    ref={slider => (customSlider.current = slider)}
+                                >
+                                    { 
+                                        _.map(item.slideList, (item) => (
+                                            <img src={item.url} />
+                                        ))
+                                    }
+                                </Slider>
+                            </div>
+                        </TabPane>
                     ))
                 }
-            </div>
-            <div className='worksModal animate__animated animate__zoomIn' onClick={(e) => modalImageClick(e)}>
-                <Slider 
-                    {...settings}
-                    ref={slider => (customSlider.current = slider)}
-                >
-                    { 
-                        _.map(imgList, (item) => (
-                            <img src={item.url} />
-                        ))
-                    }
-                </Slider>
+                </Tabs>
             </div>
         </div>
     )

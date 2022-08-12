@@ -17,6 +17,10 @@ html, body {
     flex: 1 100%;
     max-width: 100%;
 }
+.content {
+    width:100%;
+    min-height: 100vh;
+}
 .back_to_top {
     display: none;
     position: fixed;
@@ -25,6 +29,9 @@ html, body {
     bottom: 2rem;
     height: 40px;
     transition: all 0.3s ease-in-out;
+}
+.back_to_top :hover {
+    transform: scale(1.1);
 }
 .site-layout-content {
     min-height: 280px;
@@ -47,18 +54,21 @@ html, body {
     display: flex;  
     flex-flow: column wrap;
     font-family: 'Dosis', sans-serif;
-    background: #262626;
+    /* background: #8a7d5ae9; */
+    height: 50vh;
+    background-image: url('../images/img/T01_3.jpeg');
+    background-position-y: 66%;
 }
 .header .headerTop {
     display: flex;  
-    flex-flow: row wrap;
-    /* align-items: left; */
+    flex-flow: row nowrap;
     justify-content: right;
-    height: 80px;
+    height: 100px;
+    background-color: #00000051;
 }
 .header-fixed-top{
     width: 100%;
-    background-color: #18191ba3;
+    background-color: #0000008a;
     margin-top: 0;
     position: fixed;
     top:0px;
@@ -66,13 +76,17 @@ html, body {
     z-index: 999;
 }
 .header .headerTop .logo {
-    flex: 1 1 20%;
+    flex: 1 1 50%;
     display: flex;
     max-width: 100%;
-    height: 80px;
+    height: 100px;
+}
+#headerLogo {
+    transform: scale(1.6,1.6);
+    margin-left: 50px;
 }
 .header .headerTop .menu {
-    flex: 1 1 80%;
+    flex: 1 1 50%;
 }
 .header .headerTop .miniMenu {
     flex: 1 1 0%;
@@ -84,7 +98,7 @@ html, body {
     flex-flow: row nowrap;
     justify-content: right;
     align-items: end;
-    margin-top: 10px;
+    /* margin-top: 10px; */
 }
 .header .headerTop .menu ul li{
     list-style-type: none;
@@ -92,23 +106,23 @@ html, body {
     font-size: 18px;
     padding-bottom: 20px;
 }
-a{
+.header a {
     display: inline-flex;
-    color: white;
-    overflow: hidden;
+    color: #d2c898;
+    font-weight: bold;
 }
 .header .headerTop .menu ul li a:hover{
-    color: #ececbb;
+    color: #4d3f08;
     border-radius: 5px;
     transform: scale(1.2);
 }
 .header .headerTop .menu ul li a:active{
-    background:rgba(0, 0, 0, 0.397);
-    color: #ececbb;
+    /* background:rgba(0, 0, 0, 0.397); */
+    /* color: #262626; */
     border-radius: 5px;
     transform: scale(1.2);
 }
-.header .headerBottom {
+/* .header .headerBottom {
     flex: 1 100%;
     width: 100%;
     max-height: 80vh;
@@ -116,7 +130,7 @@ a{
 }
 .header .headerBottom img{
     width: 100%;
-}
+} */
 /* pad */
 @media (max-width: 880px) {
     .header .headerTop {
@@ -178,17 +192,17 @@ a{
         max-width: 100%;
         height: 80px;
     } */
-    .header .headerBottom {
+    /* .header .headerBottom {
         flex: 1 100%;
         width: 100%;
         max-height: 20vh;
         overflow: hidden;
-    }
+    } */
 }
 /* Footer */
 .footer{
-    background: #262626;
-    color: white;
+    background: #dad5bbd4;
+    color: #4d3f08;
     justify-content: space-around;
     align-items: center;
     display: flex;
@@ -205,7 +219,7 @@ a{
     margin: 30px;
 }
 .footer h4 {
-    color: white;
+    color: #4d3f08;
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 0.3em;
@@ -213,23 +227,21 @@ a{
 .footer p{
     margin-bottom: 0.1em;
 }
-.text{
-}
 .messageIcon{
 }
 .messageIcon a img{
     width: 80%;
 }
-.footer .messageIcon a:hover{
-    color: #ececbb;
+.footer a {
+    display: inline-flex;
+    color: #4d3f08;
+    font-weight: bold;
+}
+.footer a:hover{
+    color: #d2c898;
     transform: scale(1.2);
 }
 /* ContactUs 聯絡我們 */
-.content {
-    width:100%;
-    min-height: 100vh;
-    padding: 20px;
-}
 .contact .contactForm{
     padding: 20px;
     text-align: left;
@@ -244,78 +256,7 @@ a{
 .contact .myMiniInfoDetail{
     justify-content: left;
 }
-/* Works 作品集 */
-#works{
-    display: flex;
-    align-items: center;
-    flex-flow: row wrap;
-}
-.imgList {
-    padding: 50px;
-    display: flex;
-    justify-content: center;
-    flex-flow: row wrap;
-}
-.img {
-    margin: 10px;
-}
-.worksModal {
-    width: 70vw;
-    display: none;
-    position: absolute;
-    margin-right: -50%;
-    transform: translate(0%, -40%);
-}
-.worksModal img{
-    display: inline-block;
-}
-.modalBlur > *:not(.worksModal) {
-    -webkit-filter: blur(3px);
-}
-.slick-slide{
-    padding: 20px;
-}
-.slick-prev {
-    left: 3% !important;
-    z-index: 1;
-}
-.slick-next {
-    right: 3% !important;
-    z-index: 1;
-}
-.slick-prev:before,
-.slick-next:before {
-    color: black!important;
-}
-/* FAQ 常見問題*/
-.faq{
-    padding: 20px;
-}
-.faq .question{
-    display: flex;
-    flex-flow: row wrap;
-    padding: 20px;
-    justify-content: center;
-}
-.faq .question .questionItem{
-    width: 60%;
-    margin-bottom: 20px;
-    margin-left: 20px;
-    border-width:5px;
-    border-style:dashed;
-    border-color:#7B7B7B;
-    padding:5px;
-    border-radius: 20px;
-    display: flex;
-    flex-flow: column wrap;
-    align-items: flex-start;
-    box-shadow:3px 3px 5px 5px #cccccc;
-}
-.faq .question .questionItem > * {
-    margin: 20px;
-}
-.faq .question .questionItem .que{
-    font-size: 15px;
-    font-weight: bold;
-    margin-bottom: 0.3em
+/* 通用 */
+h1 {
+    font-size: 36px;
 }

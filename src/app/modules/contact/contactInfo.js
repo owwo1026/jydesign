@@ -3,7 +3,6 @@ import { Form, Input, InputNumber, Button, Row, Col, Radio } from "antd";
 import _ from "lodash";
 import axios from "axios";
 import { isBlank } from "../../components/helpers/utils.js";
-import united_design_logo from "../../assets/images/logo/S__213770243.jpg";
 
 const layout = {
   labelCol: { span: 4 },
@@ -101,12 +100,12 @@ const contact = (props) => {
       <Row>
         <Col span={12}>
           <div className="myMiniInfo">
-            {/* <img style={{width: '70%'}} src={united_design_logo} alt='凝聚室內設計'/> */}
+            {/* <img style={{width: '70%'}} src={united_design_logo} alt='維域設計'/> */}
             <div dangerouslySetInnerHTML={{ __html: googleMap }}></div>
           </div>
           <div className="myMiniInfoDetail">
-            <p>凝聚室內裝修設計</p>
-            <p>台北市松山區民族東路689號</p>
+            <p>維域設計室內裝修有限公司</p>
+            <p>台中市北屯區</p>
           </div>
         </Col>
         <Col span={12}>

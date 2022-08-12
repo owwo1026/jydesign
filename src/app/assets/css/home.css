@@ -1,0 +1,23 @@
+/* Home 首頁 */
+#home {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+#home .text {
+    width: 20%;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-style:double;
+    background-color: #0000006d;
+}
+#home .slick-slider img {
+    min-width: 100%;
+    min-height: 100%;
+}
+/* .showBackgroundImg {
+    transition: all 30s;
+    transform: scale(1.2);
+} */

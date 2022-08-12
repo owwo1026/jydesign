@@ -1,0 +1,55 @@
+
+/* Works 作品集 */
+.works {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    text-align: center;
+}
+.title {
+    width: 100%;
+}
+.imgList {
+    width: 80%;
+}
+.desc {
+    font-size: 20px;
+    color: #747474;
+    padding: 3%;
+}
+.imgItems {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: left;
+}
+.img {
+    margin: 33px;
+}
+.worksModal {
+    width: 70vw;
+    display: none;
+    position: absolute;
+    margin-right: -50%;
+    transform: translate(0%, -40%);
+}
+.worksModal img{
+    display: inline-block;
+}
+.modalBlur > *:not(.worksModal) {
+    -webkit-filter: blur(3px);
+}
+.works .slick-slide{
+    padding: 20px;
+}
+.works .slick-prev {
+    left: 3% !important;
+    z-index: 1;
+}
+.works .slick-next {
+    right: 3% !important;
+    z-index: 1;
+}
+.works .slick-prev:before,
+.works .slick-next:before {
+    color: black!important;
+}
