@@ -36,6 +36,7 @@ export default () => {
           </a>
           <div class="dropdown-content" id="myDropdown">
             <a href="/about" onClick={(e) => menuClick(e)}>關於我們</a>
+            <a href="/sop" onClick={(e) => menuClick(e)}>服務流程</a>
             <a href="/works" onClick={(e) => menuClick(e)}>作品集</a>
             <a href="/faq" onClick={(e) => menuClick(e)}>常見問題</a>
             <a href="/contact" onClick={(e) => menuClick(e)}>聯絡我們</a>
@@ -46,6 +47,11 @@ export default () => {
             <li className="nav-item">
               <a className="nav-link" role="button" href="/about">
                 關於我們
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" role="button" href="/sop">
+                服務流程
               </a>
             </li>
             <li className="nav-item">

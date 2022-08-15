@@ -29,7 +29,7 @@ export default () => {
                 <Route path='/about' element={<About />}/>
                 <Route path='/works' element={<Works />} />
                 <Route path='/faq' element={<Faq />} />
-                {/* <Route path='/sop' element={<Sop />} /> */}
+                <Route path='/sop' element={<Sop />} />
                 <Route path='/contact' element={<Contact />} />
                 {/* <Route component={NoMatch} /> */}
             </Routes>

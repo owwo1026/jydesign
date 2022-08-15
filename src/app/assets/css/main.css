@@ -1,7 +1,9 @@
+@import '~antd/dist/antd.css';
+
 html, body {
     height: 100%; /* 外層高度100% */
     margin: 0;
-    font-family: "微軟正黑體";
+    font-family: "Copperplate", "STHeiti Light", "微軟正黑體";
 }
 .wrapper {
     min-height: 100%;
@@ -16,6 +18,11 @@ html, body {
 .wrapper > * {
     flex: 1 100%;
     max-width: 100%;
+}
+.title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 50px;
 }
 .content {
     width:100%;
@@ -58,6 +65,7 @@ html, body {
     height: 50vh;
     background-image: url('../images/img/T01_3.jpeg');
     background-position-y: 66%;
+    /* box-shadow:2px 2px 5px 5px #ffffff inset; */
 }
 .header .headerTop {
     display: flex;  
@@ -68,7 +76,7 @@ html, body {
 }
 .header-fixed-top{
     width: 100%;
-    background-color: #0000008a;
+    background-color: #000000cf;
     margin-top: 0;
     position: fixed;
     top:0px;

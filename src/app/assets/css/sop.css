@@ -1,0 +1,16 @@
+/* SOP 服務流程*/
+.sop {
+    padding: 20px;
+}
+.sop .step {
+    padding: 0px 50px;
+}
+.sop .ant-timeline-item-label {
+    padding: 0px 50px;
+    font-size: 26px;
+    font-family: "Copperplate", "STHeiti Light", "Heiti TC", '微軟正黑體', "Microsoft JhengHei", sans-serif;
+}
+
+.sop .ant-timeline-item-tail {
+    border-left: 2px solid #000000c9;
+}

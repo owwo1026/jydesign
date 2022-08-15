@@ -4,6 +4,7 @@ import { CaretRightOutlined } from '@ant-design/icons';
 import faqList from '../../assets/json/faqList.json';
 import _ from 'lodash'
 import $ from 'jquery'
+import '../../assets/css/faq.css';
 
 export default () => {
   // _.map(faqList, item => {
