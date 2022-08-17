@@ -1,6 +1,6 @@
 /* FAQ 常見問題*/
 .faq{
-    padding: 20px;
+    /* padding: 20px; */
 }
 .faq .question{
     display: flex;
@@ -16,12 +16,22 @@
     border-style:dashed;
     border-color:#7B7B7B;
     padding:5px;
-    border-radius: 20px;
+    border-radius: 15px;
     display: flex;
     flex-flow: column wrap;
     align-items: flex-start;
     box-shadow:3px 3px 5px 5px #cccccc;
 }
+.faq .question .questionItem:nth-child(odd){
+    width: 40vw;
+    margin-right: 45vw;
+    background:pink;
+}
+.faq .question .questionItem:nth-child(even){
+    width: 40vw;
+    margin-left: 45vw;
+    background:#EDF1CB;
+}  
 .faq .question .questionItem > * {
     margin: 20px;
 }

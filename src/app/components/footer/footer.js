@@ -15,7 +15,7 @@ export default () => {
     <div id="footer" className="footer">
       <div className="info">
         <h4>維域設計室內裝修有限公司</h4>
-        <p>地址：台中市北屯區</p>
+        <p>地址：台中市北屯區文心路三段447號4F</p>
         <p>手機：0972-078-750</p>
         <p>電子信箱：Wei.Yu.Design22@gmail.com</p>
       </div>
@@ -24,14 +24,14 @@ export default () => {
         <Space>
           <a
             role="button"
-            href="https://www.facebook.com/xxxxx"
+            href="https://www.facebook.com/wei.yu.design22"
             target="_blank"
           >
             <FacebookOutlined style={{ fontSize: "30px" }} />
           </a>
           <a
             role="button"
-            href="https://www.instagram.com/xxxxx"
+            href="http://instagram.com/wei.yu.design22"
             target="_blank"
           >
             <InstagramOutlined style={{ fontSize: "30px" }} />
@@ -46,7 +46,7 @@ export default () => {
           <a role="button" href="tel:+886-972078750">
             <PhoneOutlined style={{ fontSize: "30px" }} />
           </a>
-          <a role="button" href="mailto:Wei.Yu.Design22@gmail.com">
+          <a role="button" href="mailto:wei.yu.design22@gmail.com">
             <MailOutlined style={{ fontSize: "30px" }} />
           </a>
         </Space>

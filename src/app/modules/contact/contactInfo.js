@@ -1,16 +1,18 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { Form, Input, InputNumber, Button, Row, Col, Radio } from "antd";
+import { Form, Input, Button, Row, Col, Radio, Checkbox } from "antd";
 import _ from "lodash";
 import axios from "axios";
 import { isBlank } from "../../components/helpers/utils.js";
+import '../../assets/css/contactUs.css';
 
 const layout = {
   labelCol: { span: 4 },
   wrapperCol: { span: 15 },
-  colon: false,
+  // colon: false,
   labelAlign: "left",
   scrollToFirstError: true,
-  layout: "vertical",
+  layout: "horizontal",
+  size: "large"
 };
 
 /* eslint-disable no-template-curly-in-string */
@@ -46,7 +48,7 @@ const contact = (props) => {
           msg = msg + "\n房屋狀態: " + val;
           break;
         case "budgetRange":
-          msg = msg + "\n預算: " + val + " 萬元";
+          msg = msg + "\n預算: " + val;
           break;
         case "desc":
           msg = msg + "\n需求說明: " + val;
@@ -105,7 +107,8 @@ const contact = (props) => {
           </div>
           <div className="myMiniInfoDetail">
             <p>維域設計室內裝修有限公司</p>
-            <p>台中市北屯區</p>
+            <p>台中市北屯區文心路三段447號4F</p>
+            <p>TEL: 0972078750</p>
           </div>
         </Col>
         <Col span={12}>
@@ -121,7 +124,7 @@ const contact = (props) => {
                 label="姓名"
                 rules={
                   [
-                    // { required: true }
+                    { required: true }
                   ]
                 }
               >
@@ -132,11 +135,19 @@ const contact = (props) => {
                 label="電話"
                 rules={
                   [
-                    // { required: true }
+                    { required: true }
                   ]
                 }
               >
                 <Input />
+              </Form.Item>
+              <Form.Item name={["user", "time"]} label="聯絡時間" rules={[{ required: true }]}>
+                <Checkbox.Group>
+                  <Checkbox value='9-12'>09:00-12:00</Checkbox>
+                  <Checkbox value='12-15'>12:00-15:00</Checkbox>
+                  <Checkbox value='15-18'>15:00-18:00</Checkbox>
+                  <Checkbox value='18-20'>18:00-21:00</Checkbox>
+                </Checkbox.Group>
               </Form.Item>
               <Form.Item
                 name={["user", "email"]}
@@ -155,13 +166,14 @@ const contact = (props) => {
                   <Radio value="新成屋">新成屋</Radio>
                 </Radio.Group>
               </Form.Item>
-              <Form.Item>
-                <Form.Item name={["user", "budgetRange"]} label="預算範圍">
-                  <InputNumber min={0} max={10000} defaultValue={0} />
-                </Form.Item>
-                <span className="ant-form-text" style={{ paddingLeft: "10px" }}>
-                  萬元
-                </span>
+              <Form.Item name={["user", "budgetRange"]} label="預算範圍" extra="不包含傢俱家電">
+                <Radio.Group>
+                  <Radio value="100萬以內">100萬以內</Radio>
+                  <Radio value="100萬-200萬">100萬-200萬</Radio>
+                  <Radio value="200萬-300萬">200萬-300萬</Radio>
+                  <Radio value="300萬-400萬">300萬-400萬</Radio>
+                  <Radio value="500萬以上">500萬以上</Radio>
+                </Radio.Group>
               </Form.Item>
               <Form.Item name={["user", "desc"]} label="需求說明">
                 <Input.TextArea

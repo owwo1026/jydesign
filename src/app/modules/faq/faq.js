@@ -18,7 +18,7 @@ export default () => {
       <div className='question'>
         { 
             _.map(faqList, (item,idx1) => (
-              <div className='questionItem'>
+              <div id={'faq'+idx1} className='questionItem'>
                 <div className='que'>
                   <h3>{item.question}</h3>
                 </div>

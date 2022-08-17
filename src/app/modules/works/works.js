@@ -22,27 +22,30 @@ export default () => {
         slidesToScroll: 1
     };
     function imageClick(e, id) {
-        var width = $('.worksModal').outerWidth(),
-            height = $('.worksModal').outerHeight(),
-            
-            $window = $(window),
-            bodyWidth = $window.width(),
-            bodyHeight = $window.height(),
-            
-            scrollTop = $window.scrollTop(),
-            top = (bodyHeight / 2 - height / 2) / 3 * 2 + scrollTop,
-            left = bodyWidth / 2 - width / 2;
-            console.log('top = ' + (bodyHeight / 2 - height / 2) / 3 * 2 + scrollTop);
-        
-        $('.worksModal').css({
-            top: top,
-            left: left,
-            transform: `translate(${top}, ${left})`
-        });
-        console.log('id = ' + id);
-        customSlider.current.slickGoTo(id);
-        e.stopPropagation();
-        if( $('.works').hasClass('modalBlur') ) {
+    var width = $('.worksModal .slick-current img').attr('height',$(this).height()),
+        height = $('.worksModal .slick-current').outerHeight(),
+        bodyWidth = $(window).width(),
+        bodyHeight = $(window).height(),
+        scrollTop = $(window).scrollTop(),
+        // top = (bodyHeight / 2 - height / 2) / 3 * 2 + scrollTop,
+        // left = bodyWidth / 2 - width / 2,
+        top = (bodyHeight - (bodyHeight/2)) / 2 - scrollTop,
+        left = (bodyWidth - (bodyWidth/2)) / 2;
+        console.log('top = ' + top);
+        console.log('left = ' + left);
+        console.log('width = ' + width);
+        console.log('height = ' + height);
+        console.log('bodyWidth = ' + bodyWidth);
+        console.log('bodyHeight = ' + bodyHeight);
+    $('.worksModal').css({
+        top: top,
+        left: left,
+        transform: `translate(${top}, ${left})`
+    });
+    // console.log('id = ' + id);
+    customSlider.current.slickGoTo(id);
+    e.stopPropagation();
+    if( $('.works').hasClass('modalBlur') ) {
             $('.works').removeClass('modalBlur');
             $('.header').removeClass('modalBlur');
             $('.footer').removeClass('modalBlur');
@@ -99,10 +102,10 @@ export default () => {
                 <h1>作品集</h1>    
             </div>
             <div className="imgList">
-                <Tabs type="card" centered="true" size="large">
+                <Tabs type="card" centered="true" size="large" className="antdTabs">
                 { 
                     _.map(imgList, (item) => (
-                        <TabPane tab={item.name} key={item.name}>
+                        <TabPane tab={<div className='antdTabPane'>{item.name}</div>} key={item.name}>
                             <div className='desc'>{item.desc}</div>
                             <div className='imgItems'>
                                 {   

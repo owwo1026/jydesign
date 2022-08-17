@@ -3,7 +3,7 @@
 html, body {
     height: 100%; /* 外層高度100% */
     margin: 0;
-    font-family: "Copperplate", "STHeiti Light", "微軟正黑體";
+    font-family: "Chalkboard", "Hannotate SC", "Copperplate", "STHeiti Light", "微軟正黑體";
 }
 .wrapper {
     min-height: 100%;
@@ -19,14 +19,12 @@ html, body {
     flex: 1 100%;
     max-width: 100%;
 }
-.title {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 50px;
-}
 .content {
     width:100%;
     min-height: 100vh;
+    display: flex;  
+    flex-flow: column nowrap;
+    justify-content: space-between;
 }
 .back_to_top {
     display: none;
@@ -34,7 +32,7 @@ html, body {
     z-index: 9999;
     right: 2rem;
     bottom: 2rem;
-    height: 40px;
+    height: 80px;
     transition: all 0.3s ease-in-out;
 }
 .back_to_top :hover {
@@ -59,20 +57,29 @@ html, body {
 /* Header */
 .header{ 
     display: flex;  
-    flex-flow: column wrap;
-    font-family: 'Dosis', sans-serif;
-    /* background: #8a7d5ae9; */
+    flex-flow: row wrap;
     height: 50vh;
     background-image: url('../images/img/T01_3.jpeg');
     background-position-y: 66%;
-    /* box-shadow:2px 2px 5px 5px #ffffff inset; */
+    background-repeat: space;
+    background-position: center center;
+    background-size: cover;
+    align-content: space-between;
+    justify-content: center;
+}
+.mask {
+    background-color: rgba(0, 0, 0, 0.35);
+    width: 100vw;
+    height: 50vh;
 }
 .header .headerTop {
+    flex: 1 1 100%;
     display: flex;  
     flex-flow: row nowrap;
     justify-content: right;
     height: 100px;
-    background-color: #00000051;
+    background-color: #00000074;
+    
 }
 .header-fixed-top{
     width: 100%;
@@ -209,12 +216,14 @@ html, body {
 }
 /* Footer */
 .footer{
+    flex: 1 1 100%;
     background: #dad5bbd4;
     color: #4d3f08;
     justify-content: space-around;
     align-items: center;
     display: flex;
     flex-flow: row wrap;
+    max-height: 180px;
 }
 .footer img{
     width: 10%;
@@ -249,22 +258,18 @@ html, body {
     color: #d2c898;
     transform: scale(1.2);
 }
-/* ContactUs 聯絡我們 */
-.contact .contactForm{
-    padding: 20px;
-    text-align: left;
-    padding-left: 20px;
-}
-.ant-form-item{
-    margin-bottom: 10px;
-}
-.contact .myMiniInfo{
-    padding: 20px;
-}
-.contact .myMiniInfoDetail{
-    justify-content: left;
-}
 /* 通用 */
 h1 {
-    font-size: 36px;
+    font-size: 40px;
+}
+.title {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    bottom: 150px;
+}
+.title h1{
+
+    font-size: 50px;
+    color: #d2c898;
 }
