@@ -60,7 +60,7 @@
 /* Modal */
 .worksModal {
     /* z-index: 9999; */
-    max-width: 80vw;
+    max-width: 60vw;
     max-height: 60vh;
     display: none;
     position: fixed;
@@ -71,7 +71,16 @@
     transform: translate(-50%,-50%); */
 }
 .worksModal img{
-    display: inline-block;
+    max-height: 100%;  
+    max-width: 100%; 
+    width: auto;
+    height: auto;
+    position: absolute;  
+    top: 0;  
+    bottom: 0;  
+    left: 0;  
+    right: 0;  
+    margin: auto;
 }
 .modalBlur > *:not(.worksModal) {
     /* -webkit-filter: blur(3px); */

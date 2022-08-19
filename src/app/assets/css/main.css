@@ -217,7 +217,9 @@ html, body {
 /* Footer */
 .footer{
     flex: 1 1 100%;
-    background: #dad5bbd4;
+    /* background: #907d62; */
+    /* background: #e2d6bb; */
+    background: #797769;
     color: #4d3f08;
     justify-content: space-around;
     align-items: center;

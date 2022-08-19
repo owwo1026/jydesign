@@ -102,7 +102,6 @@ const contact = (props) => {
       <Row>
         <Col span={12}>
           <div className="myMiniInfo">
-            {/* <img style={{width: '70%'}} src={united_design_logo} alt='維域設計'/> */}
             <div dangerouslySetInnerHTML={{ __html: googleMap }}></div>
           </div>
           <div className="myMiniInfoDetail">

@@ -22,30 +22,30 @@ export default () => {
         slidesToScroll: 1
     };
     function imageClick(e, id) {
-    var width = $('.worksModal .slick-current img').attr('height',$(this).height()),
-        height = $('.worksModal .slick-current').outerHeight(),
-        bodyWidth = $(window).width(),
-        bodyHeight = $(window).height(),
-        scrollTop = $(window).scrollTop(),
-        // top = (bodyHeight / 2 - height / 2) / 3 * 2 + scrollTop,
-        // left = bodyWidth / 2 - width / 2,
-        top = (bodyHeight - (bodyHeight/2)) / 2 - scrollTop,
-        left = (bodyWidth - (bodyWidth/2)) / 2;
-        console.log('top = ' + top);
-        console.log('left = ' + left);
-        console.log('width = ' + width);
-        console.log('height = ' + height);
-        console.log('bodyWidth = ' + bodyWidth);
-        console.log('bodyHeight = ' + bodyHeight);
-    $('.worksModal').css({
-        top: top,
-        left: left,
-        transform: `translate(${top}, ${left})`
-    });
-    // console.log('id = ' + id);
-    customSlider.current.slickGoTo(id);
-    e.stopPropagation();
-    if( $('.works').hasClass('modalBlur') ) {
+        var width = $('.worksModal').width(),
+            height = $('.worksModal').height(),
+            windowWidth = $(window).width(),
+            windowHeight = $(window).height(),
+            scrollTop = $(window).scrollTop(),
+            // top = (windowHeight / 2 - height / 2) / 3 * 2 + scrollTop,
+            // left = windowWidth / 2 - width / 2,
+            top = (windowHeight/2 - (windowHeight/2)) / 2,
+            left = (windowWidth/2 - (windowWidth/2)) / 2;
+            console.log('top = ' + top);
+            console.log('left = ' + left);
+            console.log('width = ' + width);
+            console.log('height = ' + height);
+            console.log('windowWidth = ' + windowWidth);
+            console.log('windowHeight = ' + windowHeight);
+        $('.worksModal').css({
+            top: top,
+            left: left,
+            transform: `translate(${top}, ${left})`
+        });
+        console.log('id = ' + id);
+        customSlider.current.slickGoTo(id);
+        e.stopPropagation();
+        if( $('.works').hasClass('modalBlur') ) {
             $('.works').removeClass('modalBlur');
             $('.header').removeClass('modalBlur');
             $('.footer').removeClass('modalBlur');
@@ -56,6 +56,28 @@ export default () => {
         }
         $('.worksModal').toggle();
     }
+    // $(window).scroll(function(){
+    //     var width = $('.worksModal .slick-current img').attr('height',$(this).height()),
+    //         height = $('.worksModal .slick-current').outerHeight(),
+    //         windowWidth = $(window).width(),
+    //         windowHeight = $(window).height(),
+    //         scrollTop = $(window).scrollTop(),
+    //         // top = (windowHeight / 2 - height / 2) / 3 * 2 + scrollTop,
+    //         // left = windowWidth / 2 - width / 2,
+    //         top = (windowHeight/2 - (windowHeight/2)) / 2,
+    //         left = (windowWidth/2 - (windowWidth/2)) / 2;
+    //         console.log('top = ' + top);
+    //         console.log('left = ' + left);
+    //         console.log('width = ' + width);
+    //         console.log('height = ' + height);
+    //         console.log('windowWidth = ' + windowWidth);
+    //         console.log('windowHeight = ' + windowHeight);
+    //     $('.worksModal').css({
+    //         top: top,
+    //         left: left,
+    //         transform: `translate(${top}, ${left})`
+    //     });
+    // })
     function modalImageClick(e) {
         e.stopPropagation();
     }
