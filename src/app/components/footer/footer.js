@@ -9,18 +9,23 @@ import {
 } from "@ant-design/icons";
 import { Space, Button } from "antd";
 import line_icon from "../../assets/images/icon/icons8-line-48.png";
+import logo from "../../assets/images/logo/website/LOGO去背1.png";
 
 export default () => {
   return (
     <div id="footer" className="footer">
-      <div className="info">
+      {/* <div className="info">
         <h4>維域設計室內裝修有限公司</h4>
         <p>地址：台中市北屯區文心路三段447號4F</p>
         <p>手機：0972-078-750</p>
         <p>電子信箱：Wei.Yu.Design22@gmail.com</p>
-      </div>
-      <div className="text">WeiYu Design ©2022</div>
+      </div> */}
+      <div className="text">COPYRIGHT © 2022 WEIYU DESIGN</div>
+      {/* <div className="logo">
+        <img id="headerLogo" src={logo} alt="維域設計室內裝修有限公司" />
+      </div> */}
       <div className="messageIcon">
+      {/* <div className="text">維域設計室內裝修有限公司</div> */}
         <Space>
           <a
             role="button"

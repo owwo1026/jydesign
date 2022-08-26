@@ -13,11 +13,13 @@ $(document).ready(function () {
         }
         if ($(window).scrollTop() >= 105) {
             // $('.header-sticky').removeClass('not-sticky animate__fadeInDown');
+            $('.header .headerTop').css("background-color","#797769");
             $('.header-sticky').addClass('header-fixed-top');
         }
         else {
             $('.header-sticky').removeClass('header-fixed-top');
             $('.header-sticky').addClass('not-sticky');
+            $('.header .headerTop').css("background-color","#717061d3");
         }
     });
 

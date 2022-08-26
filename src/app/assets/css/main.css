@@ -68,7 +68,7 @@ html, body {
     justify-content: center;
 }
 .mask {
-    background-color: rgba(0, 0, 0, 0.35);
+    background-color: rgba(0, 0, 0, 0.5);
     width: 100vw;
     height: 50vh;
 }
@@ -78,12 +78,12 @@ html, body {
     flex-flow: row nowrap;
     justify-content: right;
     height: 100px;
-    background-color: #00000074;
+    background-color: #717061d3;
     
 }
 .header-fixed-top{
     width: 100%;
-    background-color: #000000cf;
+    background-color: #797769;
     margin-top: 0;
     position: fixed;
     top:0px;
@@ -123,11 +123,11 @@ html, body {
 }
 .header a {
     display: inline-flex;
-    color: #d2c898;
+    color: #e7e2c5;
     font-weight: bold;
 }
 .header .headerTop .menu ul li a:hover{
-    color: #4d3f08;
+    color: #ffffff;
     border-radius: 5px;
     transform: scale(1.2);
 }
@@ -220,44 +220,54 @@ html, body {
     /* background: #907d62; */
     /* background: #e2d6bb; */
     background: #797769;
-    color: #4d3f08;
-    justify-content: space-around;
+    color: #e2d6bb;
+    justify-content: center;
     align-items: center;
     display: flex;
-    flex-flow: row wrap;
-    max-height: 180px;
+    flex-flow: row nowrap;
+    height: 120px;
+    padding: 30px;
+}
+.footer .text {
+    /* margin-left: 45%;
+    margin-right: 20%; */
 }
 .footer img{
     width: 10%;
 }
 .footer .info{
-    font-size: 14px;
+    font-size: 12px;
     justify-content: left;
     text-align: left;
     font-weight: normal;
-    margin: 30px;
+    display: flex;
+    flex-flow: row wrap;
 }
 .footer h4 {
-    color: #4d3f08;
-    font-size: 18px;
+    color: #e2d6bb;
+    font-size: 16px;
     font-weight: bold;
-    margin-bottom: 0.3em;
+    margin-bottom: 0.1em;
+    flex: 1 1 100%;
 }
 .footer p{
     margin-bottom: 0.1em;
+    flex: 1 1 20%;
 }
-.messageIcon{
+.footer .messageIcon{
+    padding-left: 30px;
+    align-items: flex-start;
 }
-.messageIcon a img{
+.footer .messageIcon a img{
     width: 80%;
 }
 .footer a {
     display: inline-flex;
-    color: #4d3f08;
+    color: #e2d6bb;
     font-weight: bold;
 }
 .footer a:hover{
-    color: #d2c898;
+    color: #ffffff;
     transform: scale(1.2);
 }
 /* 通用 */
@@ -271,7 +281,6 @@ h1 {
     bottom: 150px;
 }
 .title h1{
-
-    font-size: 50px;
-    color: #d2c898;
+    font-size: 35px;
+    color: #e2d6bb;
 }
