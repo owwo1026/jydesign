@@ -2,7 +2,7 @@ import React from "react";
 import {
   MenuOutlined
 } from "@ant-design/icons";
-import logo from "../../assets/images/logo/LOGO_中英_橫式1.png";
+import logo from "../../assets/images/logo/logo_c_5.png";
 import "../../assets/js/main.js";
 import "animate.css";
 import { Menu, Dropdown, Button, message, Space, Tooltip } from 'antd';
@@ -35,39 +35,38 @@ export default () => {
               <MenuOutlined style={{ fontSize: '30px', color: '#FFFFFF' }} />
             </a>
             <div className="dropdown-content" id="myDropdown">
-              <a href="/about" onClick={(e) => menuClick(e)}>關於我們</a>
-              <a href="/sop" onClick={(e) => menuClick(e)}>服務流程</a>
-              <a href="/works" onClick={(e) => menuClick(e)}>作品集</a>
-              <a href="/faq" onClick={(e) => menuClick(e)}>常見問題</a>
-              <a href="/contact" onClick={(e) => menuClick(e)}>聯絡我們</a>
+              <a href="/about" onClick={(e) => menuClick(e)}><span>Home</span><p>關於我們</p></a>
+              <a href="/sop" onClick={(e) => menuClick(e)}><span>Home</span><p>服務流程</p></a>
+              <a href="/works" onClick={(e) => menuClick(e)}><span>Home</span><p>作品集</p></a>
+              <a href="/faq" onClick={(e) => menuClick(e)}><span>Home</span><p>常見問題</p></a>
+              <a href="/contact" onClick={(e) => menuClick(e)}><span>Home</span><p>聯絡我們</p></a>
             </div>
           </div>
           <nav className="menu">
             <ul className="navbar-nav">
               <li className="nav-item">
                 <a className="nav-link" role="button" href="/about">
-                  關於我們
+                  <span>關於我們</span><p>ABOUT</p>
                 </a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" role="button" href="/sop">
-                  服務流程
+                  <span>服務流程</span><p>SERVICE</p>
                 </a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" role="button" href="/works">
-                  作品集
+                  <span>作品集</span><p>WORK</p>
                 </a>
               </li>
-              {/* <li className='nav-item'><a className='nav-link' role='button' href='/sop'>流程介紹</a></li> */}
               <li className="nav-item">
                 <a className="nav-link" role="button" href="/faq">
-                  常見問題
+                  <span>常見問題</span><p>FAQ</p>
                 </a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" role="button" href="/contact">
-                  聯絡我們
+                  <span>聯絡我們</span><p>CONTACT</p>
                 </a>
               </li>
             </ul>

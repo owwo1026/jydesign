@@ -8,8 +8,8 @@ import {
   MessageOutlined,
 } from "@ant-design/icons";
 import { Space, Button } from "antd";
-import line_icon from "../../assets/images/icon/icons8-line-48.png";
-import logo from "../../assets/images/logo/website/LOGO去背1.png";
+// import line_icon from "../../assets/images/icon/icons8-line-48.png";
+// import logo from "../../assets/images/logo/website/LOGO去背1.png";
 
 export default () => {
   return (
@@ -20,12 +20,10 @@ export default () => {
         <p>手機：0972-078-750</p>
         <p>電子信箱：Wei.Yu.Design22@gmail.com</p>
       </div> */}
-      <div className="text">COPYRIGHT © 2022 WEIYU DESIGN</div>
       {/* <div className="logo">
         <img id="headerLogo" src={logo} alt="維域設計室內裝修有限公司" />
       </div> */}
-      <div className="messageIcon">
-      {/* <div className="text">維域設計室內裝修有限公司</div> */}
+      {/* <div className="messageIcon">
         <Space>
           <a
             role="button"
@@ -55,7 +53,8 @@ export default () => {
             <MailOutlined style={{ fontSize: "30px" }} />
           </a>
         </Space>
-      </div>
+      </div> */}
+      <div className="text">COPYRIGHT © 2022 WEIYU DESIGN</div>
     </div>
   )
 };

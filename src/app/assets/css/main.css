@@ -3,7 +3,8 @@
 html, body {
     height: 100%; /* 外層高度100% */
     margin: 0;
-    font-family: "Chalkboard", "Hannotate SC", "Copperplate", "STHeiti Light", "微軟正黑體";
+    /* font-family: "cwTeXYen ", "Microsoft JhengHei"; */
+    font-family: "Hind", "Helvetica", "Chalkboard", "Hannotate SC", "Copperplate", "STHeiti Light", "微軟正黑體";
 }
 .wrapper {
     min-height: 100%;
@@ -26,18 +27,6 @@ html, body {
     flex-flow: column nowrap;
     justify-content: space-between;
 }
-.back_to_top {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    right: 2rem;
-    bottom: 2rem;
-    height: 80px;
-    transition: all 0.3s ease-in-out;
-}
-.back_to_top :hover {
-    transform: scale(1.1);
-}
 .site-layout-content {
     min-height: 280px;
     padding: 24px;
@@ -58,7 +47,7 @@ html, body {
 .header{ 
     display: flex;  
     flex-flow: row wrap;
-    height: 50vh;
+    height: 75vh;
     background-image: url('../images/img/T01_3.jpeg');
     background-position-y: 66%;
     background-repeat: space;
@@ -68,9 +57,9 @@ html, body {
     justify-content: center;
 }
 .mask {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.1);
     width: 100vw;
-    height: 50vh;
+    height: 75vh;
 }
 .header .headerTop {
     flex: 1 1 100%;
@@ -78,8 +67,8 @@ html, body {
     flex-flow: row nowrap;
     justify-content: right;
     height: 100px;
-    background-color: #717061d3;
-    
+    /* background-color: #717061d3; */
+    background-color: rgba(113, 112, 97, 0.6);    
 }
 .header-fixed-top{
     width: 100%;
@@ -97,8 +86,8 @@ html, body {
     height: 100px;
 }
 #headerLogo {
-    transform: scale(1.6,1.6);
-    margin-left: 50px;
+    margin: 5px;
+    padding-left: 30px;
 }
 .header .headerTop .menu {
     flex: 1 1 50%;
@@ -111,23 +100,36 @@ html, body {
     height: 100%;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: right;
+    justify-content: center;
     align-items: end;
     /* margin-top: 10px; */
 }
 .header .headerTop .menu ul li{
     list-style-type: none;
-    width: 150px;
+    width: 12%;
     font-size: 18px;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
+    margin-right: 25px;
 }
 .header a {
     display: inline-flex;
     color: #e7e2c5;
-    font-weight: bold;
+    font-size: 18px;
+    /* font-weight: bold; */
 }
-.header .headerTop .menu ul li a:hover{
-    color: #ffffff;
+.header .headerTop .menu ul li a span {
+    display: none;
+}
+.header .headerTop .menu ul li a:hover span {
+    display: block;
+    padding-bottom: 17px;
+    /* color: #ffffff; */
+    border-radius: 5px;
+    /* transform: scale(1.2); */
+}
+.header .headerTop .menu ul li a:hover p{
+    display: none;
+    /* color: #ffffff; */
     border-radius: 5px;
     transform: scale(1.2);
 }
@@ -219,7 +221,9 @@ html, body {
     flex: 1 1 100%;
     /* background: #907d62; */
     /* background: #e2d6bb; */
-    background: #797769;
+    /* background: #797769; */
+    /* background: #797769c2; */
+    background: rgb(145, 144, 132);
     color: #e2d6bb;
     justify-content: center;
     align-items: center;
@@ -229,58 +233,53 @@ html, body {
     padding: 30px;
 }
 .footer .text {
-    /* margin-left: 45%;
-    margin-right: 20%; */
-}
-.footer img{
-    width: 10%;
-}
-.footer .info{
-    font-size: 12px;
-    justify-content: left;
-    text-align: left;
-    font-weight: normal;
-    display: flex;
-    flex-flow: row wrap;
-}
-.footer h4 {
-    color: #e2d6bb;
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 0.1em;
-    flex: 1 1 100%;
-}
-.footer p{
-    margin-bottom: 0.1em;
-    flex: 1 1 20%;
-}
-.footer .messageIcon{
-    padding-left: 30px;
-    align-items: flex-start;
-}
-.footer .messageIcon a img{
-    width: 80%;
-}
-.footer a {
-    display: inline-flex;
-    color: #e2d6bb;
-    font-weight: bold;
-}
-.footer a:hover{
-    color: #ffffff;
-    transform: scale(1.2);
+    margin-left: 30px;
 }
 /* 通用 */
+.content {
+    background-color: #e2d6bb34;
+}
+
 h1 {
     font-size: 40px;
 }
 .title {
     width: 100%;
     text-align: center;
-    position: relative;
-    bottom: 150px;
+    padding: 5%;
 }
 .title h1{
     font-size: 35px;
-    color: #e2d6bb;
+    color: #000000;
+    font-weight: bold;
+}
+
+/* Side Bar */
+.leftbox {
+    position: fixed;
+    z-index: 9999;
+    right: 2rem;
+    bottom: 15rem;
+    height: 80px;
+    display: flex;  
+    flex-flow: column wrap;
+}
+.leftbox .myBar {
+    display: flex;
+    flex-flow: column wrap;
+}
+.leftbox .myBar a {
+    margin-bottom: 20%;
+}
+.leftbox a {
+    color: #797769;
+    font-weight: bold;
+}
+.leftbox a:hover{
+    color: rgb(145, 144, 132);
+    transform: scale(1.1);
+}
+.back_to_top {
+    display: none;
+    transition: all 0.3s ease-in-out;
 }
