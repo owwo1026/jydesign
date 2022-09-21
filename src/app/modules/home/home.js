@@ -56,9 +56,9 @@ return (
         { 
           _.map(logoPartList, (item) => (
             <img className="partsLogo animate__animated animate__flip"
-                 style={{ animationDelay: `0.${item.id}s` }}
-                 id={'prartsLogo_'+item.id} 
-                 src={item.url} alt="維域設計室內裝修有限公司" />
+                style={{ animationDelay: `0.${item.id}s` }}
+                id={'prartsLogo_'+item.id} 
+                src={item.url} alt="維域設計室內裝修有限公司" />
           ))
         }
         <div className='enter animate__animated animate__backInLeft'>Enter</div>

@@ -20,8 +20,7 @@ export default () => {
         <p>手機：0972-078-750</p>
         <p>電子信箱：Wei.Yu.Design22@gmail.com</p>
       </div> */}
-      <div className="text">COPYRIGHT © 2022 WEIYU DESIGN</div>
-      <div className="messageIcon">
+      {/* <div className="messageIcon">
         <Space>
           <a
             role="button"
