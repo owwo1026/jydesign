@@ -20,10 +20,8 @@ export default () => {
         <p>手機：0972-078-750</p>
         <p>電子信箱：Wei.Yu.Design22@gmail.com</p>
       </div> */}
-      {/* <div className="logo">
-        <img id="headerLogo" src={logo} alt="維域設計室內裝修有限公司" />
-      </div> */}
-      {/* <div className="messageIcon">
+      <div className="text">COPYRIGHT © 2022 WEIYU DESIGN</div>
+      <div className="messageIcon">
         <Space>
           <a
             role="button"
