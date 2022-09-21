@@ -21,11 +21,7 @@ export default () => {
         <p>電子信箱：Wei.Yu.Design22@gmail.com</p>
       </div> */}
       <div className="text">COPYRIGHT © 2022 WEIYU DESIGN</div>
-      {/* <div className="logo">
-        <img id="headerLogo" src={logo} alt="維域設計室內裝修有限公司" />
-      </div> */}
       <div className="messageIcon">
-      {/* <div className="text">維域設計室內裝修有限公司</div> */}
         <Space>
           <a
             role="button"
