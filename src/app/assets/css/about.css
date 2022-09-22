@@ -25,11 +25,6 @@
 }
 .aboutInfo .about-wy .about-wy-content{
     flex: 1 1 50%;
-    font-variant-ligatures: inherit;
-    font-variant-caps: inherit;
-    font-variant-numeric: inherit;
-    font-variant-east-asian: inherit;
-    vertical-align: baseline;
 }
 .aboutInfo .about-blank {
     height: 300px;
@@ -128,15 +123,15 @@
     display: flex;
     flex-flow: row nowrap;
     padding: 80px 5%;
-    width: 100%;
+    width: 100vw;
     text-align: center;
     overflow: hidden;
 }
 .aboutInfo .about-other .about-other-go {
     flex: 1 1 50%;
     margin-inline: 20px;
-    min-width: 100%;
-    min-height: 350px;
+    max-width: 100%;
+    max-height: 350px;
     display: flex;
     flex-flow: column nowrap;
     overflow: hidden;
