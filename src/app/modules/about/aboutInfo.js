@@ -1,6 +1,6 @@
 import React from "react";
 import "../../assets/css/about.css";
-import example from "../../assets/images/img/T01_2.jpg";
+import example from "../../assets/images/logo/logo_sample.jpg";
 // <img src={example} />
 
 export default () => {
@@ -8,9 +8,9 @@ export default () => {
     <div className="aboutInfo">
       {/* 第一段 關於維域 */}
       <div className="about-wy">
-        <div className="about-wy-title">
-          {/* <span className="cn">關於維域</span> */}
-          <span className="en">WEI YU DESIGN</span>
+        <div className="about-title">
+          <span className="about-title-cn">關於維域</span>
+          <span className="about-title-en">W.Y. DESIGN</span>
         </div>
         <div className="about-wy-content">
           <p>
@@ -22,17 +22,19 @@ export default () => {
           </p>
         </div>
       </div>
-      {/* <div className="about-blank-img-1">
-        <img src={example} />
-      </div> */}
+      {/* <div className="about-blank"></div> */}
       {/* 第二段 設計理念 */}
       <div className="about-design">
-        <div className="about-design-title">
-          <span className="cn">設計理念</span>
-          <span className="en">DESIGN CONCEPT</span>
-        </div>
+        {/* <div className="about-title">
+          <span className="about-title-cn">設計理念</span>
+          <span className="about-title-en">DESIGN CONCEPT</span>
+        </div> */}
         <div className="about-design-content">
           <div className="about-design-content-text">
+            <div className="about-title">
+              <span className="about-title-cn">設計理念</span>
+              <span className="about-title-en">DESIGN CONCEPT</span>
+            </div>
             <p>
               In May 2019, I launched Create with Danielle within weeks from the idea popping in my head.
               In one day, I booked my first client.
@@ -57,30 +59,38 @@ export default () => {
       </div> */}
       {/* 第四段 服務項目 */}
       <div className="about-service">
-        <div className="about-service-1"></div>
-        <div className="about-service-2"></div>
-        <div className="about-service-3"></div>
-        <div className="about-service-4"></div>
+        <div className="about-service-title">
+          <span>Our Services / 服務項目</span>
+        </div>
+        <div className="about-service-list">
+          <div className="about-service-item">Commercial Design / 住宅空間</div>
+          <div className="about-service-item">Residential Design / 商業空間</div>
+          <div className="about-service-item">Systeam Furniture / 系統傢俱</div>
+        </div>
       </div>
       {/* 第五段 其他連結 */}
       <div className="about-other">
         <div className="about-other-title">
           <span></span>
         </div>
-        <div className="about-other-go">
-          <div className="about-other-img"><img src={example} /></div>
+        <a className="about-other-go" role="button" href="/works">
+          <div className="about-other-img">
+          <img src={example} />  
+          </div>
           <div className="about-other-content">
             <div className="about-other-content-text">PORTFOLIO</div>
             <div className="about-other-content-link">VIEW NOW</div>
           </div>
-        </div>
-        <div className="about-other-go">
-          <div className="about-other-img"><img src={example} /></div>
+        </a>
+        <a className="about-other-go" role="button" href="/contact">
+          <div className="about-other-img">
+          <img src={example} />  
+          </div>
           <div className="about-other-content">
             <div className="about-other-content-text">CONTACT US</div>
             <div className="about-other-content-link">VIEW NOW</div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   );

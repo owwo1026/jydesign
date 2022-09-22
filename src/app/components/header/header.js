@@ -40,8 +40,8 @@ export default () => {
                 <span>Home</span>
                 <p>服務流程</p>
               </a>
-              <a href="/works" onClick={(e) => menuClick(e)}>
-                <span>Home</span>
+              <a href="/portfolio" onClick={(e) => menuClick(e)}>
+                <span>PORTFOLIO</span>
                 <p>作品集</p>
               </a>
               <a href="/faq" onClick={(e) => menuClick(e)}>
@@ -69,9 +69,9 @@ export default () => {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" role="button" href="/works">
+                <a className="nav-link" role="button" href="/portfolio">
                   <span>作品集</span>
-                  <p>WORK</p>
+                  <p>PORTFOLIO</p>
                 </a>
               </li>
               <li className="nav-item">

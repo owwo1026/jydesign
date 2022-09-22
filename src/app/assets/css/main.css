@@ -1,10 +1,15 @@
 @import '~antd/dist/antd.css';
 
+@font-face {
+    font-family: SweetSansProRegular;
+    src: url(../font/sweet-sans-pro-cufonfonts-webfont/SweetSansProRegular.woff);
+}
+
 html, body {
     height: 100%; /* 外層高度100% */
     margin: 0;
     /* font-family: "cwTeXYen ", "Microsoft JhengHei"; */
-    font-family: "Hind", "Helvetica", "Chalkboard", "Hannotate SC", "Copperplate", "STHeiti Light", "微軟正黑體";
+    font-family: "SweetSansProRegular", "Hind", "Helvetica", "Chalkboard", "Hannotate SC", "Copperplate", "STHeiti Light", "微軟正黑體";
 }
 .wrapper {
     min-height: 100%;
@@ -47,7 +52,7 @@ html, body {
 .header{ 
     display: flex;  
     flex-flow: row wrap;
-    height: 75vh;
+    height: 100vh;
     background-image: url('../images/img/T01_3.jpeg');
     background-position-y: 66%;
     background-repeat: space;
@@ -59,7 +64,7 @@ html, body {
 .mask {
     background-color: rgba(0, 0, 0, 0.1);
     width: 100vw;
-    height: 75vh;
+    height: 100vh;
 }
 .header .headerTop {
     flex: 1 1 100%;
