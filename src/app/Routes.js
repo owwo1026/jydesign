@@ -6,7 +6,7 @@ import Contact from './modules/contact/contactInfo.js';
 import Faq from './modules/faq/faq.js';
 import Home from './modules/home/home.js';
 import Sop from './modules/sop/sop.js';
-import Works from './modules/works/works.js';
+import Portfolio from './modules/works/portfolio.js';
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
 import {
@@ -52,7 +52,7 @@ export default () => {
             <Routes>
                 <Route path='/' element={<Home />}/>
                 <Route path='/about' element={<About />}/>
-                <Route path='/portfolio' element={<Works />} />
+                <Route path='/portfolio' element={<Portfolio />} />
                 <Route path='/faq' element={<Faq />} />
                 <Route path='/sop' element={<Sop />} />
                 <Route path='/contact' element={<Contact />} />

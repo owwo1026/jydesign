@@ -1,0 +1,26 @@
+
+/* Works 作品集 */
+.works {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    text-align: center;
+}
+.works .workList {
+    margin: 5% 10%;
+}
+.works .workList .workListItem {
+    width: 40%;
+    height: 40vh;
+}
+.works .workList .workListItem:nth-child(odd){
+    margin-right: 45vw;
+    background:pink;
+    position: relative;
+}
+.works .workList .workListItem:nth-child(even){
+    margin-left: 45vw;
+    background:#EDF1CB;
+    position: relative;
+    transform: translateY(-50%);
+}  
