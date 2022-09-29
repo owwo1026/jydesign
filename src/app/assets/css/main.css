@@ -4,11 +4,13 @@
     font-family: SweetSansProRegular;
     src: url(../font/sweet-sans-pro-cufonfonts-webfont/SweetSansProRegular.woff);
 }
-
+/* background: #907d62; */
+/* background: #e2d6bb; */
+/* background: #797769; */
+/* background: #797769c2; */
 html, body {
     height: 100%; /* 外層高度100% */
     margin: 0;
-    /* font-family: "cwTeXYen ", "Microsoft JhengHei"; */
     font-family: "SweetSansProRegular", "Hind", "Helvetica", "Chalkboard", "Hannotate SC", "Copperplate", "STHeiti Light", "微軟正黑體";
 }
 .wrapper {
@@ -52,8 +54,8 @@ html, body {
 .header{ 
     display: flex;  
     flex-flow: row wrap;
-    height: 100vh;
-    background-image: url('../images/img/T01_3.jpeg');
+    /* height: 100vh; */
+    /* background-image: url('../images/img/T01_3.jpeg'); */
     background-position-y: 66%;
     background-repeat: space;
     background-position: center center;
@@ -64,18 +66,19 @@ html, body {
 .mask {
     background-color: rgba(0, 0, 0, 0.1);
     width: 100vw;
-    height: 100vh;
+    /* height: 100vh; */
 }
 .header-mini {
     background-image:none;
-    height: 100px;
+    height: 120px;
 }
 .header .headerTop {
+    padding: 0% 5%;
     flex: 1 1 100%;
     display: flex;  
     flex-flow: row nowrap;
     justify-content: right;
-    height: 100px;
+    height: 120px;
     /* background-color: #717061d3; */
     background-color: rgba(113, 112, 97, 0.6);    
 }
@@ -92,7 +95,7 @@ html, body {
     flex: 1 1 30%;
     display: flex;
     max-width: 100%;
-    height: 100px;
+    height: 120px;
 }
 #headerLogo {
     margin: 5px;
@@ -118,7 +121,6 @@ html, body {
 }
 .header .headerTop .menu ul li{
     list-style-type: none;
-    /* width: 12%; */
     font-size: 18px;
     padding-bottom: 15px;
     margin-left: 50px;
@@ -141,31 +143,17 @@ html, body {
 .header .headerTop .menu ul li a:hover span {
     display: block;
     padding-bottom: 17px;
-    /* color: #ffffff; */
     border-radius: 5px;
-    /* transform: scale(1.2); */
 }
 .header .headerTop .menu ul li a:hover p{
     display: none;
-    /* color: #ffffff; */
     border-radius: 5px;
     transform: scale(1.2);
 }
 .header .headerTop .menu ul li a:active{
-    /* background:rgba(0, 0, 0, 0.397); */
-    /* color: #262626; */
     border-radius: 5px;
     transform: scale(1.2);
 }
-/* .header .headerBottom {
-    flex: 1 100%;
-    width: 100%;
-    max-height: 80vh;
-    overflow: hidden;
-}
-.header .headerBottom img{
-    width: 100%;
-} */
 /* pad */
 @media (max-width: 880px) {
     .header .headerTop {
@@ -237,10 +225,6 @@ html, body {
 /* Footer */
 .footer{
     flex: 1 1 100%;
-    /* background: #907d62; */
-    /* background: #e2d6bb; */
-    /* background: #797769; */
-    /* background: #797769c2; */
     background: rgb(145, 144, 132);
     color: #e2d6bb;
     justify-content: center;

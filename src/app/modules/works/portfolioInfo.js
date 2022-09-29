@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
 import { Tabs } from 'antd';
+import { useParams } from 'react-router-dom';
 import _ from 'lodash'
 import $ from 'jquery'
 import Slider from 'react-slick';
@@ -8,7 +9,10 @@ import 'slick-carousel/slick/slick-theme.css';
 import '../../assets/css/portfolio.css';
 import worksList from '../../assets/json/worksList.json';
 
+const { TabPane } = Tabs;
+
 export default () => {
+    let { wid } = useParams();
     const customSlider = useRef();
     const settings = {
         adaptiveHeight: true,
@@ -64,58 +68,53 @@ export default () => {
         $('.worksModal').hide();
     });
     // 處理img
-    var imgList = [];
+    // var imgList = [];
     var imgItem = [];
     var slideList = [];
     var count = 0;
-    _.forEach(worksList, item => {
-        imgItem = [];
-        slideList = [];
-        count = 0;
-        const works = require.context("../../assets/works/");
-        const worksItem = _.filter(works.keys(), p => p.includes(item.path));
-        // console.log("worksItem = " + worksItem);
-        // console.log("worksItem: "+ worksItem);
-        _.forEach(worksItem.map(works), img => {
-            imgItem.push({
-                id: count,
-                url:  img
-            });
-            slideList.push({
-                id: count,
-                url:  img
-            });
-            count++;
+    const works = require.context("../../assets/works/");
+    const worksItem = _.filter(works.keys(), p => p.includes("/"+wid+"/"));
+    console.log("worksItem: " + worksItem);
+    _.forEach(worksItem.map(works), img => {
+        imgItem.push({
+            id: count,
+            url:  img
         });
-        imgList.push({
-            name: item.name,
-            desc: item.desc,
-            images: imgItem,
-            slideList: slideList
+        slideList.push({
+            id: count,
+            url:  img
         });
+        count++;
     });
     return (
         <div className='works'>
-            <div className='work-wrap'>
-                <div className='work-content'>
-                    <div className='work-title'><h3>PORTFOLIO / 作品集</h3></div>
-                    <div className='work-desc'><p>作品集寶貝們</p></div>
-                </div>
-                <ul className='work-list'>
-                    { 
-                        _.map(imgList, (item,idx1) => (
-                            <li id={'w'+idx1} className='work-list-item'>
-                                <a href={'/portfolioInfo/'+idx1}>
-                                    <div className='project-img'><img src={item.images[0].url} alt={item.images[0].desc} id={item.images[0].id} /></div>
-                                    <div className='project-content'>
-                                        <div className='project-title'>{item.name}</div>
-                                        {/* <div className='project-desc'>{item.desc}</div> */}
-                                    </div>
+            <div className='title'>
+                <h1>wid : {wid}</h1>    
+            </div>
+            <div className="imgList">
+                <div className='imgItems'>
+                    {   
+                        _.map(imgItem, (img) => (
+                            <div className='img animate__animated animate__zoomIn'> 
+                                <a className='click_worksModal'>
+                                    <img onClick={(e) => imageClick(e, img.id)} className='imgListItem' src={img.url} alt={img.desc} id={img.id} width='300' height='200' />
                                 </a>
-                            </li>
+                            </div>
                         ))
                     }
-                </ul>
+                </div>
+                <div id='worksModal' className='worksModal animate__animated animate__zoomIn' onClick={(e) => modalImageClick(e)}>
+                    <Slider 
+                        {...settings}
+                        ref={slider => (customSlider.current = slider)}
+                    >
+                        { 
+                            _.map(slideList, (item) => (
+                                <img src={item.url} />
+                            ))
+                        }
+                    </Slider>
+                </div>
             </div>
         </div>
     )

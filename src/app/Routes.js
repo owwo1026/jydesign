@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, useParams } from 'react-router-dom';
 import $ from 'jquery'
 import About from './modules/about/aboutInfo.js';
 import Contact from './modules/contact/contactInfo.js';
@@ -7,6 +7,7 @@ import Faq from './modules/faq/faq.js';
 import Home from './modules/home/home.js';
 import Sop from './modules/sop/sop.js';
 import Portfolio from './modules/works/portfolio.js';
+import PortfolioInfo from './modules/works/portfolioInfo.js';
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
 import {
@@ -46,6 +47,7 @@ export default () => {
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     });
+    const {wid} = useParams()
     return (
         <div className = "content">
             { location.pathname === '/' ? <div/>:<Header/> }
@@ -53,6 +55,7 @@ export default () => {
                 <Route path='/' element={<Home />}/>
                 <Route path='/about' element={<About />}/>
                 <Route path='/portfolio' element={<Portfolio />} />
+                <Route path="/portfolioInfo/:wid" element={<PortfolioInfo />} />
                 <Route path='/faq' element={<Faq />} />
                 <Route path='/sop' element={<Sop />} />
                 <Route path='/contact' element={<Contact />} />
